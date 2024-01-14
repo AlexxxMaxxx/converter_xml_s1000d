@@ -21,16 +21,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.app{
-  padding: 20px;
-}
-
 .uploader {
   margin: 0 auto;
   padding: 15px;
