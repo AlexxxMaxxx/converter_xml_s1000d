@@ -1,17 +1,29 @@
 <template>
-  <div>Work!</div>
+  <div class="app">
+    <h1>Конвертировать Word в XML S1000D</h1>
+    <Uploader></Uploader>
+    <span class="file-info">Файл: {{ uploaderFile.name }}</span>
+  </div>
 </template>
 
 <script>
-export default {
+import Uploader from '@/components/Uploader';
+import { ref } from 'vue';
 
+export default {
+  components: {
+    Uploader
+  },
+  setup() {
+    const uploaderFile = ref("");
+    
+    return {
+      uploaderFile
+    };
+  },
 }
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<style lang="scss">
+  
 </style>
