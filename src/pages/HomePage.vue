@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
       <h1>Конвертировать Word в XML S1000D</h1>
       <Uploader></Uploader>
       <span class="file-info">Файл: {{ uploaderFile.name }}</span>
@@ -23,7 +23,3 @@ export default {
   },
 }
 </script>
-
-<style lang='scss' scoped>
-
-</style>

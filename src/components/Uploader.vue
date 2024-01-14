@@ -1,5 +1,11 @@
 <template>
-  <div class="uploader">
+  <div 
+    @dragenter.prevent="toggleActive"
+    @dragleave.prevent="toggleActive"
+    @dragover.prevent
+    @drop.prevent="toggleActive"
+    class="uploader"
+  >
      <span>Перетащите файл сюда</span>
      <span>ИЛИ</span>
      <label>
@@ -19,32 +25,3 @@ export default {
 
 }
 </script>
-
-<style scoped lang="scss">
-.uploader {
-  margin: 0 auto;
-  padding: 15px;
-  width: 50%;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 16px;
-  border: 2px black dashed;
-  border-radius: 10px;
-  background-color: white;
-  transition: 0.3s ease all;
-
-  label {
-    padding: 8px 12px;
-    color: white;
-    background-color: #A63CD4;
-    transition: 0.3s ease all;
-
-    input {
-      display: none;
-    }
-  }
-}
-</style>
