@@ -1,7 +1,9 @@
 <template>
     <div class="home">
       <h1>Конвертировать Word в XML S1000D</h1>
-      <Uploader></Uploader>
+      <Uploader
+       @drop.prevent="drop" @change="selectedFile"
+      ></Uploader>
       <span class="file-info">Файл: {{ uploaderFile.name }}</span>
     </div>
 </template>
@@ -15,10 +17,18 @@ export default {
     Uploader
   },
   setup() {
-    const uploaderFile = ref("");
+    let uploaderFile = ref("");
+
+    const drop = (e) => {
+      uploaderFile.value = e.dataTransfer.files[0]
+    };
+
+    const selectedFile = () => {
+       uploaderFile.value = document.querySelector('.uploaderFile').files[0];
+    };
 
     return {
-      uploaderFile
+      uploaderFile, drop, selectedFile
     };
   },
 }

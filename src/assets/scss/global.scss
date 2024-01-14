@@ -24,6 +24,7 @@ body {
 }
 
 .uploader {
+  color: grey;
   margin: 0 auto;
   padding: 15px;
   width: 50%;
@@ -33,7 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   row-gap: $row-gap;
-  border: 2px black dashed;
+  border: 5px grey dotted;
   border-radius: 10px;
   background-color: white;
   transition: $transition;
@@ -49,3 +50,14 @@ body {
     }
   }
 }
+
+  .active-uploader {
+    color: white;
+    border-color: white;
+    background-color: $medium-light-purple;
+
+    label {
+      color: $medium-light-purple;
+      background-color: white;
+    }
+  }
