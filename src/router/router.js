@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '@/pages/HomePage'
-import Result from '@/pages/Result'
+import ResultPage from '@/pages/ResultPage'
 
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/getResult',
-    component: Result
+    component: ResultPage
   }
 ]
 const router = createRouter({

@@ -14,9 +14,21 @@ body {
   font-family: 'Montserrat-Medium';
   font-size: large;
   color: $black;
+  background-color: $background-color;
 }
 
-.home {
+button {
+   padding: $padding;
+    font-family: 'Montserrat-Medium';
+    font-size: large;
+    letter-spacing: 2px;
+    transition: $transition;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.home-page, .result-page {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,8 +40,21 @@ body {
     font-family: 'Montserrat-Bold';
   }
 
+  .next-bth, .back-bth {
+    background-color: $light-green;
+    &:hover {
+      background-color: $green;
+    }
+  }
+}
+
+.home-page {
   strong {
-     color: $red;
+     color: $light-pink;
+  }
+
+  .disabled:hover {
+    background-color: $disabled-grey;
   }
 }
 
@@ -46,21 +71,21 @@ body {
   row-gap: $row-gap;
   border: 5px $grey dotted;
   border-radius: 10px;
-  background-color: white;
+ 
   transition: $transition;
 
   label {
-    padding: 16px 32px;
+    padding: $padding;
     color: white;
-    background-color: $red;
+    background-color: $light-pink;
     transition: $transition;
     border-radius: 5px;
 	  letter-spacing: 2px;
     box-shadow: -10px 10px 10px $grey-shadow;
 
     &:hover {
-		background-color: $maroon;
-	}
+		  background-color: $pink;
+	  }
 
     input {
       display: none;
@@ -71,10 +96,10 @@ body {
   .active-uploader {
     color: white;
     border: none;
-    background-color: $red;
+    background-color: $light-pink;
 
     label {
-      color: $red;
+      color: $light-pink;
       background-color: white;
     }
   }

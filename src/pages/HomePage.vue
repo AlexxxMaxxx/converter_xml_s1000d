@@ -1,15 +1,19 @@
 <template>
-    <div class="home">
+    <div class="home-page">
       <h1>Конвертировать Word в XML S1000D</h1>
       <Uploader
        @drop.prevent="drop" @change="selectedFile"
       ></Uploader>
-      <span class="file-info">Файл: <strong>{{ uploaderFile.name }}</strong></span>
+      <span 
+       v-if="uploaderFile"
+       class="file-info">Имя загруженного файла: <strong>{{ uploaderFile.name }}</strong></span>
       <button 
-       class="home__next-btn next-bth"
-       @click="$router.push('/getResult')"
-      >Convert</button>
-      <!--style + disabled (look btn in pages)-->
+       class="home-page__next-btn next-bth"
+       :class="{ disabled: !uploaderFile}"
+       @click="uploaderFile ? $router.push('/getResult') : message = true"
+      >Конвертировать</button>
+      <span 
+       v-if="!uploaderFile && message">Сначала загрузите файл</span>
     </div>
 </template>
 
@@ -21,6 +25,9 @@ export default {
   components: {
     Uploader
   },
+  data: () => ({
+    message: false,
+  }),
   setup() {
     let uploaderFile = ref("");
 
