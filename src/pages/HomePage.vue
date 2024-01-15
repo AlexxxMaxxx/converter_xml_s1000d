@@ -4,7 +4,7 @@
       <Uploader
        @drop.prevent="drop" @change="selectedFile"
       ></Uploader>
-      <span class="file-info">Файл: {{ uploaderFile.name }}</span>
+      <span class="file-info">Файл: <strong>{{ uploaderFile.name }}</strong></span>
     </div>
 </template>
 

@@ -11,7 +11,9 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Montserrat-Medium';
+  font-size: large;
+  color: $black;
 }
 
 .home {
@@ -21,29 +23,44 @@ body {
   justify-content: center;
   align-items: center;
   row-gap: $row-gap * 2;
+
+  h1 {
+    font-family: 'Montserrat-Bold';
+  }
+
+  strong {
+     color: $red;
+  }
 }
 
 .uploader {
   color: grey;
   margin: 0 auto;
   padding: 15px;
-  width: 50%;
+  width: 70%;
   min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: $row-gap;
-  border: 5px grey dotted;
+  border: 5px $grey dotted;
   border-radius: 10px;
   background-color: white;
   transition: $transition;
 
   label {
-    padding: 8px 12px;
+    padding: 16px 32px;
     color: white;
-    background-color: $medium-light-purple;
+    background-color: $red;
     transition: $transition;
+    border-radius: 5px;
+	  letter-spacing: 2px;
+    box-shadow: -10px 10px 10px $grey-shadow;
+
+    &:hover {
+		background-color: $maroon;
+	}
 
     input {
       display: none;
@@ -53,11 +70,39 @@ body {
 
   .active-uploader {
     color: white;
-    border-color: white;
-    background-color: $medium-light-purple;
+    border: none;
+    background-color: $red;
 
     label {
-      color: $medium-light-purple;
+      color: $red;
       background-color: white;
     }
   }
+
+@font-face {
+	font-family: 'Montserrat-ExtraBold';
+	src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bolder;
+}
+
+@font-face {
+	font-family: 'Montserrat-Bold';
+	src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bolder;
+}
+
+@font-face {
+	font-family: 'Montserrat-Light';
+	src: url('../fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bolder;
+}
+
+@font-face {
+	font-family: 'Montserrat-Medium';
+	src: url('../fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+	font-style: normal;
+	font-weight: bolder;
+}
