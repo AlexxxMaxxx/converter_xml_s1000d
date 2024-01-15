@@ -5,6 +5,11 @@
        @drop.prevent="drop" @change="selectedFile"
       ></Uploader>
       <span class="file-info">Файл: <strong>{{ uploaderFile.name }}</strong></span>
+      <button 
+       class="home__next-btn next-bth"
+       @click="$router.push('/getResult')"
+      >Convert</button>
+      <!--style + disabled (look btn in pages)-->
     </div>
 </template>
 
